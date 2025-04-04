@@ -15,6 +15,13 @@ def interaction_desc(interaction: discord.Interaction, title: str, description: 
     )
     return embed
 
+def only_desc(interaction: discord.Interaction, description: str, color: discord.Color) -> discord.Embed:
+    embed = discord.Embed(
+        description = description,
+        color = color
+    )
+    return embed
+
 def embed_prefix(ctx, title, color):
     embed = discord.Embed(
         title = title,
