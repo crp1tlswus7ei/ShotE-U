@@ -45,4 +45,4 @@ class Skick(commands.Cog):
 async def setup(bot):
    await bot.add_cog(Skick(bot))
 
-# Solved / English
+# Solved

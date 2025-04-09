@@ -45,4 +45,4 @@ class Ssoftban(commands.Cog):
 async def setup(bot):
    await bot.add_cog(Ssoftban(bot))
 
-# Solved / English
+# Solved

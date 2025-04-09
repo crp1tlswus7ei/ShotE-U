@@ -21,10 +21,3 @@ def only_desc(interaction: discord.Interaction, description: str, color: discord
         color = color
     )
     return embed
-
-def embed_prefix(ctx, title, color):
-    embed = discord.Embed(
-        title = title,
-        color = color
-    )
-    return embed
