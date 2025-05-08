@@ -9,13 +9,14 @@ class Sban(commands.Cog):
 
    @app_commands.command(
       name = 'ban',
-      description = 'Permanent expulsion to a user'
+      description = 'Permanent expulsion to a user',
+      nsfw = False
    )
    @app_commands.describe(
       user = 'User to be sanctioned.',
       reason = 'Reason for sanction.'
    )
-   async def ban(self, interaction: discord.Interaction, user: discord.Member, *, reason: str = None):
+   async def ban(self, interaction: discord.Interaction, user: discord.Member, reason: str = None):
       if not interaction.user.guild_permissions.ban_members: #
          no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.orange())
          no_perms.set_footer(text = 'Permission required: ban_members')

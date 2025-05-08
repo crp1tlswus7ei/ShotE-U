@@ -36,6 +36,8 @@ class Sunban(commands.Cog):
          nobot_perms = embed_interaction(interaction, 'Error executing command.', discord.Color.dark_red())
          nobot_perms.set_footer(text = 'Check the error documentation.')
          await interaction.response.send_message(embed = nobot_perms, ephemeral = True)
+      except Exception as e:
+         print(f's-unban: {e}')
 
       banned_users = interaction.guild.bans()
       async for ban_entry in banned_users:

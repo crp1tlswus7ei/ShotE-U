@@ -31,11 +31,14 @@ class Sclear(commands.Cog):
       try:
          await interaction.channel.purge(limit = amount)
          clear_ = embed_interaction(interaction, f'{amount} deleted message(s)', discord.Color.dark_blue())
+         clear_.set_footer(text = f'Clear by: {interaction.user.display_name}', icon_url = interaction.user.avatar)
          await interaction.followup.send(embed = clear_, ephemeral = True)
       except discord.Forbidden:
          nobot_perms = embed_interaction(interaction, 'Error executing command.', discord.Color.dark_red())
          nobot_perms.set_footer(text = 'Check the error documentation.')
-         await interaction.response.send_message(embed = nobot_perms, ephemeral = True) # pendiente
+         await interaction.response.send_message(embed = nobot_perms, ephemeral = True) # ?
+      except Exception as e:
+         print(f's-clear: {e}')
 
 async def setup(bot):
    await bot.add_cog(Sclear(bot))

@@ -41,6 +41,8 @@ class Ssoftban(commands.Cog):
          nobot_perms = embed_interaction(interaction, 'Error executing command.', discord.Color.dark_red())
          nobot_perms.set_footer(text = 'Check the error documentation.')
          await interaction.response.send_message(embed = nobot_perms, ephemeral = True)
+      except Exception as e:
+         print(f's-soft_ban: {e}')
 
 async def setup(bot):
    await bot.add_cog(Ssoftban(bot))

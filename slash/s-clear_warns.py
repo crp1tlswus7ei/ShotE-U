@@ -16,7 +16,7 @@ class SclearW(commands.Cog):
    @app_commands.describe(
       user = 'User to clear warns.'
    )
-   async def clearwarns(self, interaction: discord.Interaction, user: discord.Member):
+   async def clear_warns(self, interaction: discord.Interaction, user: discord.Member):
       if not interaction.user.guild_permissions.manage_roles: #
          no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.orange())
          no_perms.set_footer(text='Permission required: manage_roles')
