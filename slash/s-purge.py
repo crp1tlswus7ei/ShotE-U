@@ -39,7 +39,7 @@ class Spurge(commands.Cog):
          await interaction.channel.purge(limit = 7049, check = c_user)
          purge_ = embed_interaction(interaction, f'{user.display_name} messages deleted.', discord.Color.dark_blue())
          purge_.set_footer(text = f'Purge by: {interaction.user.display_name}', icon_url = interaction.user.avatar)
-         await interaction.response.send_message(embed = purge_ , ephemeral = False)
+         await interaction.followup.send(embed = purge_ , ephemeral = False)
       except discord.Forbidden:
          nobot_perms = embed_interaction(interaction, 'Error executing command.', discord.Color.dark_red())
          nobot_perms.set_footer(text = 'Check the error documentation')
@@ -50,4 +50,4 @@ class Spurge(commands.Cog):
 async def setup(bot):
    await bot.add_cog(Spurge(bot))
 
-# Not solved (text pending)
+# Solved

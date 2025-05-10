@@ -1,9 +1,12 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+
+from mdw.c_roles import CreateMuteRole
 from utils.embeds import embed_interaction, interaction_desc
 
 class Smute(commands.Cog):
+   from mdw.c_roles import CreateMuteRole
    def __init__(self, bot):
         self.bot = bot
 
@@ -35,15 +38,9 @@ class Smute(commands.Cog):
       m_role = discord.utils.get(interaction.guild.roles, name = "Muted")
       if not m_role:
          try:
-            m_role = await interaction.guild.create_role(
-               name = 'Muted',
-               permissions = discord.Permissions(4296082432),
-               colour = discord.Colour.dark_red(),
-               hoist = False,
-               mentionable = False,
-               reason = 'A mute role c:'
-            )
-            create_role = embed_interaction(interaction, 'Muted role was automatically created and applied.', discord.Color.dark_grey())
+            await CreateMuteRole(interaction)
+            create_role = embed_interaction(interaction, 'Role not found and was automatically created.', discord.Color.dark_grey())
+            create_role.set_footer(text = 'Check the documentation for more details.')
             await interaction.response.send_message(embed = create_role, ephemeral = True)
 
             for channel in interaction.guild.channels:
@@ -56,7 +53,7 @@ class Smute(commands.Cog):
          except Exception as e:
             print(f's-mute: {e}')
 
-      if m_role in member.roles:
+      if m_role in user.roles:
          alr_mute = embed_interaction(interaction, 'User is already muted.', discord.Color.orange())
          await interaction.response.send_message(embed = alr_mute, ephemeral = True)
          return
@@ -69,4 +66,4 @@ class Smute(commands.Cog):
 async def setup(bot):
    await bot.add_cog(Smute(bot))
 
-# Not solved (test pending)
+# Solved
