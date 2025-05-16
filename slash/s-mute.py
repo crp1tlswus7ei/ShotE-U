@@ -1,8 +1,6 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-
-from mdw.c_roles import CreateMuteRole
 from utils.embeds import embed_interaction, interaction_desc
 
 class Smute(commands.Cog):
@@ -20,18 +18,18 @@ class Smute(commands.Cog):
    )
    async def mute(self, interaction: discord.Interaction, user: discord.Member, reason: str):
       if not interaction.user.guild_permissions.manage_roles:
-         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.orange())
+         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.light_gray())
          no_perms.set_footer(text = 'Permission required: manage_roles')
          await interaction.response.send_message(embed = no_perms, ephemeral = True)
          return
 
       if user is None:
-         no_user = embed_interaction(interaction, 'You must mention a user.', discord.Color.orange())
+         no_user = embed_interaction(interaction, 'You must mention a user.', discord.Color.light_gray())
          await interaction.response.send_message(embed = no_user, ephemeral = True)
          return
 
       if interaction.user.top_role <= user.top_role:
-         insf_perms = embed_interaction(interaction, 'You do not have permissions on this user.', discord.Color.orange())
+         insf_perms = embed_interaction(interaction, 'You do not have permissions on this user.', discord.Color.light_gray())
          await interaction.response.send_message(embed = insf_perms, ephemeral = True)
          return
 
@@ -54,12 +52,12 @@ class Smute(commands.Cog):
             print(f's-mute: {e}')
 
       if m_role in user.roles:
-         alr_mute = embed_interaction(interaction, 'User is already muted.', discord.Color.orange())
+         alr_mute = embed_interaction(interaction, 'User is already muted.', discord.Color.light_gray())
          await interaction.response.send_message(embed = alr_mute, ephemeral = True)
          return
 
       await user.add_roles(m_role, reason = reason)
-      mute_ = interaction_desc(interaction, f'Mute: **{user.id}**', f'Reason: "{reason}"', discord.Color.dark_blue())
+      mute_ = interaction_desc(interaction, f'Mute: {user.display_name}', f'Reason: **"{reason}"**', discord.Color.dark_blue())
       mute_.set_footer(text = f'Mute by: {interaction.user.display_name}', icon_url = interaction.user.avatar)
       await interaction.response.send_message(embed = mute_, ephemeral = False)
 

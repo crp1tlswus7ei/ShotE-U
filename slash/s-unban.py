@@ -16,20 +16,20 @@ class Sunban(commands.Cog):
    )
    async def unban(self, interaction: discord.Interaction, *, user_id: str):
       if not interaction.user.guild_permissions.ban_members:
-         insf_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.orange())
+         insf_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.light_gray())
          insf_perms.set_footer(text = 'Permission required: ban_members')
          await interaction.response.send_message(embed = insf_perms, ephemeral = True)
          return
 
       if user_id is None:
-         no_user = embed_interaction(interaction, 'The ID cannot be empty.', discord.Color.orange())
+         no_user = embed_interaction(interaction, 'The ID cannot be empty.', discord.Color.light_gray())
          await interaction.response.send_message(embed = no_user, ephemeral = True)
          return
 
       try:
          user_id = int(user_id)
       except ValueError:
-         w_e = embed_interaction(interaction, 'Invalid ID.', discord.Color.orange())
+         w_e = embed_interaction(interaction, 'Invalid ID.', discord.Color.light_gray())
          await interaction.response.send_message(embed = w_e, ephemeral = True)
          return
       except discord.Forbidden:

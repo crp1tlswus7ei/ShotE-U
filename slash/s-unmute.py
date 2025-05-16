@@ -1,9 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-
-from mdw.c_roles import CreateMuteRole
-from utils.embeds import embed_interaction
+from utils.embeds import embed_interaction, interaction_desc
 
 class Sunmute(commands.Cog):
    from mdw.c_roles import CreateMuteRole
@@ -20,18 +18,18 @@ class Sunmute(commands.Cog):
    )
    async def unmute(self, interaction: discord.Interaction, user: discord.Member, reason: str = None):
       if not interaction.user.guild_permissions.manage_roles:
-         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.orange())
+         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.light_gray())
          no_perms.set_footer(text = 'Permissions required: manage_roles')
          await interaction.response.send_message(embed = no_perms, ephemeral = True)
          return
 
       if user is None:
-         no_user = embed_interaction(interaction, 'You must mention a user.', discord.Color.orange())
+         no_user = embed_interaction(interaction, 'You must mention a user.', discord.Color.light_gray())
          await interaction.response.send_message(embed = no_user, ephemeral = True)
          return
 
       if interaction.user.top_role <= user.top_role:
-         insf_perms = embed_interaction(interaction, 'You do not have permissions on this user.', discord.Color.orange())
+         insf_perms = embed_interaction(interaction, 'You do not have permissions on this user.', discord.Color.light_gray())
          await interaction.response.send_message(embed = insf_perms, ephemeral = True)
          return
 
@@ -54,12 +52,12 @@ class Sunmute(commands.Cog):
             print(f's-unmute: {e}')
 
       if m_role not in user.roles:
-         no_mute = embed_interaction(interaction, 'User is not muted.', discord.Color.orange())
+         no_mute = embed_interaction(interaction, 'User is not muted.', discord.Color.light_gray())
          await interaction.response.send_message(embed = no_mute, ephemeral = True)
          return
 
       await user.remove_roles(m_role, reason = reason)
-      unmute_ = embed_interaction(interaction, f'Unmute: {user.id}', discord.Color.dark_blue())
+      unmute_ = interaction_desc(interaction, f'Unmute: {user.display_name}', f'**id:** {user.id}', discord.Color.dark_blue())
       unmute_.set_footer(text = f'Unmuted by: {interaction.user.display_name}', icon_url = interaction.user.avatar)
       await interaction.response.send_message(embed = unmute_, ephemeral = False)
 

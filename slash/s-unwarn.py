@@ -18,13 +18,13 @@ class Sunwarn(commands.Cog):
    )
    async def unwarn(self, interaction: discord.Interaction, user: discord.Member, amount: int):
       if not interaction.user.guild_permissions.manage_roles: #
-         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.orange())
+         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.light_gray())
          no_perms.set_footer(text = 'Permission required: manage_roles')
          await interaction.response.send_message(embed = no_perms, ephemeral = True)
          return
 
       if interaction.user.top_role <= user.top_role: #
-         insf_perms = embed_interaction(interaction, 'You do not have permissions on this user.', discord.Color.orange())
+         insf_perms = embed_interaction(interaction, 'You do not have permissions on this user.', discord.Color.light_gray())
          await interaction.response.send_message(embed = insf_perms, ephemeral = True)
          return
 

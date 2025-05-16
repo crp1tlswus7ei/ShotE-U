@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad834985-ae61-4502-a2a9-cd03677b0a6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-ban.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-ban.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-clear.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-clear.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-clear_warns.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-clear_warns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-kick.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-kick.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-mute.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-mute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-purge.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-purge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-softban.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-softban.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-unban.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-unban.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-unmute.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-unmute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-unwarn.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-unwarn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-warn.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-warn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slash/s-warnings.py" beforeDir="false" afterPath="$PROJECT_DIR$/slash/s-warnings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +138,10 @@
       <workItem from="1746912997515" duration="112000" />
       <workItem from="1746913149496" duration="23000" />
       <workItem from="1747081927443" duration="393000" />
+      <workItem from="1747084275348" duration="2282000" />
+      <workItem from="1747156032917" duration="3105000" />
+      <workItem from="1747248836749" duration="3018000" />
+      <workItem from="1747418928438" duration="382000" />
     </task>
     <task id="LOCAL-00001" summary="small changes">
       <option name="closed" value="true" />
@@ -160,7 +178,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -173,6 +203,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="new Commands&#10;all bugs resolved" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ShotE_U$shot.coverage" NAME="shot Coverage Results" MODIFIED="1746912407081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ShotE_U$shot.coverage" NAME="shot Coverage Results" MODIFIED="1747249589603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

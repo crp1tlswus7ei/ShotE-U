@@ -16,13 +16,13 @@ class Sclear(commands.Cog):
    )
    async def clear(self, interaction: discord.Interaction, amount: int):
       if not interaction.user.guild_permissions.manage_messages:
-         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.orange())
+         no_perms = embed_interaction(interaction, 'You are not allowed to use this command.', discord.Color.light_gray())
          no_perms.set_footer(text = 'Permission required: manage_messages')
          await interaction.response.send_message(embed = no_perms, ephemeral = True)
          return
 
       if amount is None or amount <= 0:
-         no_amount = embed_interaction(interaction, 'Enter a valid amount', discord.Color.orange())
+         no_amount = embed_interaction(interaction, 'Enter a valid amount', discord.Color.light_gray())
          no_amount.set_footer(text = 'The amount must be greater than 0.')
          await interaction.response.send_message(embed = no_amount, ephemeral = True)
          return
